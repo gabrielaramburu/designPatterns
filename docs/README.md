@@ -9,7 +9,7 @@ Encapsulate objects creation.
 **Drawback**
 The client class still maintain transitive dependencies.
 
-![](docs/simpleFactory.png)
+![](simpleFactory.png)
 
 ## Factory Method
 
