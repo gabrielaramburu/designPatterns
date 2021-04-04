@@ -7,7 +7,7 @@ Not concidered a pattern by itself but still useful to understand the whole pict
 Encapsulate objects creation.
 
 **Drawback**
-The client class still maintain transitive dependencies.
+The client class still maintain transitive dependencies with the concrete classes.
 
 ![](simpleFactory.png)
 
