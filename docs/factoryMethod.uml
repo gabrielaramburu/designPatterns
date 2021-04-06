@@ -1,30 +1,36 @@
 @startuml
-package #ffd1d1  {
-package "Abstraction" {
-Class "Interface" as inter << (I,orchid)  >> 
-	Class Client
-	 
-	Class "SimpleFactory" as fact {
-		createObject(String objectType)
+
+package "Abstraction" #ffd1d1 {
+
+Class Client
+ 
+Class "BaseClass" as baseClass {
+	createObject()
+}
+	
+}
+package "Implementations" #ffd1d1 {
+	
+	Class "ConcreteA" as a << (C,orchid)  >> {
+		createObject()
+	}
+	Class "ConcreteB" as b << (C,orchid)  >> {
+		createObject()
+	}
+	Class "ConcreteC" as c << (C,orchid)  >> {
+		createObject()
 	}
 	
+	note right
+		Dependency Inversion
+	end note
 }
-package "Implementations" {
+
 	
-	Class "ConcreteA" as a << (C,orchid)  >>
-	Class "ConcreteB" as b << (C,orchid)  >>
-	Class "ConcreteC" as c << (C,orchid)  >>
-	
-}
-note right 
-	Transitive dependencies 
-	of Client class.
-end note
-	
-Client-[thickness=3]>fact
-fact-[thickness=3]-> a
-fact-[thickness=3]>b
-fact-[thickness=3]>c
-fact->inter
+Client-[thickness=3]>baseClass
+a--|>baseClass
+b--|>baseClass
+c--|>baseClass
+
 
 @enduml

@@ -16,13 +16,19 @@ The client class still maintain transitive dependencies with concrete classes.
 **Motivation**
 - Encapsulate objects creation.
 - To achive dependency inversion.
+
+
 - Use of inheritance.
+
+![](factoryMethod.png)
 
 ## AbstractFactory
 
 **Motivation**
 - Encapsulate objects creation.
 - To achive dependency inversion.
+
+
 - Use of composition.
 
 **Drawback**
