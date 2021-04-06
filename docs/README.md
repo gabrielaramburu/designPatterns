@@ -17,6 +17,7 @@ The client class still maintain transitive dependencies with concrete classes.
 - Encapsulate objects creation.
 - To achive dependency inversion.
 
+**Particularity**
 Use of inheritance.
 
 ![](factoryMethod.png)
@@ -27,6 +28,7 @@ Use of inheritance.
 - Encapsulate objects creation.
 - To achive dependency inversion.
 
+**Particularity**
 Use of composition.
 
 **Drawback**
