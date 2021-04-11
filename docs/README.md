@@ -1,5 +1,8 @@
 # Factories
 
+Beside the fact that factories encapsulates the creation of objects, I'm particularly interested in to understand how to achieve **dependency inversion** using them. 
+The next documentation is focused in this aspect of factories.
+
 ## SimplebFactory
 Not concidered a pattern by itself but still useful to understand the whole picture. 
 
@@ -9,7 +12,7 @@ Encapsulate objects creation.
 **Drawback**
 The client class still maintain transitive dependencies with concrete classes.
 
-![](simpleFactory.png)
+![](simpleFactoryV2.png)
 
 ## Factory Method
 
@@ -20,7 +23,7 @@ The client class still maintain transitive dependencies with concrete classes.
 **Particularity**
 Use of inheritance.
 
-![](FactoryMethodv2.png)
+![](factoryMethodV2.png)
 
 ## AbstractFactory
 
