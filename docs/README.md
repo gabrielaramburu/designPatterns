@@ -9,7 +9,7 @@ Encapsulate objects creation.
 **Drawback**
 The client class still maintain transitive dependencies with concrete classes.
 
-![](simpleFactory.png)
+![](simpleFactoryV2.png)
 
 ## Factory Method
 
@@ -20,7 +20,7 @@ The client class still maintain transitive dependencies with concrete classes.
 **Particularity**
 Use of inheritance.
 
-![](FactoryMethodv2.png)
+![](factoryMethodV2.png)
 
 ## AbstractFactory
 
