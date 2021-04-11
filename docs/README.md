@@ -25,6 +25,10 @@ Use of inheritance.
 
 ![](factoryMethodV2.png)
 
+
+At some point I realized that we can fully achieve dependency inversion principle just using dependency injection.
+![](factoryMethodV3.png)
+
 ## AbstractFactory
 
 **Motivation**
