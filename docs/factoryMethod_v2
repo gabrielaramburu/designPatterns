@@ -1,0 +1,109 @@
+@startuml
+
+
+
+package "Abstractions" as p0 #GreenYellow/LightGoldenRodYellow {
+	interface Report [[java:factorymethod.report.Report]] {
+		void createHeader()
+		void createBody()
+		void createFooter()
+		void generate()
+	}
+	abstract class Reporter [[java:factorymethod.report.Reporter]] {
+		+void generateReport(String type)
+		#{abstract}Report createInstance(String type)
+	}
+	Reporter --> Report 
+	
+}
+
+note top of Reporter
+		Dependency Inversion is
+		achieving just for this package
+end note
+
+p1-[thickness=3]->p2
+package "Factories methods Impls"  as p1 #DDDDDD{
+	
+	class FinancialReporter [[java:factorymethod.reporters.FinancialReporter]] {
+		#Report createInstance(String type)
+	}
+	
+	class HumanResourcesReporter [[java:factorymethod.reporters.HumanResourcesReporter]] {
+		#Report createInstance(String type)
+	}
+	
+	Reporter <|-- HumanResourcesReporter
+	Reporter <|-- FinancialReporter
+}
+
+
+package "Client" as p3  {
+	class TestReporter [[java:factorymethod.TestReporter]] {
+			~void testFinacialReporter()
+	}
+	
+	note right of TestReporter
+		The client still depends
+		on concrete implementations 
+		of factories method class
+	end note
+}
+p3-->p1
+	
+package "Concrete reports" as p2 #DDDDDD {
+
+	class FinancialDefaultReport [[java:factorymethod.reporters.reports.FinancialDefaultReport]] {
+		+void createHeader()
+		+void createBody()
+		+void createFooter()
+		+void generate()
+	}
+	
+	Report <|.. FinancialDefaultReport
+	class FinancialMonthlyReport [[java:factorymethod.reporters.reports.FinancialMonthlyReport]] {
+		+void createHeader()
+		+void createBody()
+		+void createFooter()
+		+void generate()
+	}
+	
+	Report <|.. FinancialMonthlyReport
+	class FinancialWeeklyReport [[java:factorymethod.reporters.reports.FinancialWeeklyReport]] {
+		+void createHeader()
+		+void createBody()
+		+void createFooter()
+		+void generate()
+	}
+	
+	Report <|.. FinancialWeeklyReport
+	class HRDefaultReport [[java:factorymethod.reporters.reports.HRDefaultReport]] {
+		+void createHeader()
+		+void createBody()
+		+void createFooter()
+		+void generate()
+	}
+	
+	Report <|.. HRDefaultReport
+	class HRMonthlyReport [[java:factorymethod.reporters.reports.HRMonthlyReport]] {
+		+void createHeader()
+		+void createBody()
+		+void createFooter()
+		+void generate()
+	}
+	
+	Report <|.. HRMonthlyReport
+	class HRWeeklyReport [[java:factorymethod.reporters.reports.HRWeeklyReport]] {
+		+void createHeader()
+		+void createBody()
+		+void createFooter()
+		+void generate()
+	}
+
+	
+	
+	
+	
+
+}
+@enduml

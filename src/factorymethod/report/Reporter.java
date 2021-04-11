@@ -6,10 +6,12 @@ public abstract class Reporter {
 	public void generateReport(String type) {
 		report = createInstance(type);
 		
+		System.out.println("*** Star report generation");
 		report.createHeader();
 		report.createBody();
 		report.createFooter();
 		report.generate();
+		System.out.println("*** End report generation");
 	}
 
 	/* this is a pattern drawback, every time a new report is implemented
