@@ -1,0 +1,43 @@
+@startuml
+
+interface ShapedGraph [[java:simplefactory.ShapedGraph]] {
+}
+
+class Client [[java:simplefactory.Client]] {
+	+Client(SimpleFactory factory)
+	+void showGraph(ShapedGraph.Shape shape)
+}
+
+package "Impls" as p1 #DDDDDD{
+class SimpleFactory [[java:simplefactory.SimpleFactory]] {
+	+{static}ShapedGraph createShapedGraph(ShapedGraph.Shape shape)
+}
+
+	class CircleShapedGraph [[java:simplefactory.CircleShapedGraph]] {
+		+void drawGraph()
+	}
+	class SquareShapedGraph [[java:simplefactory.SquareShapedGraph]] {
+		+void drawGraph()
+	}
+	
+	class TriangleShapedGraph [[java:simplefactory.TriangleShapedGraph]] {
+		+void drawGraph()
+	}
+	note top of TriangleShapedGraph
+		Transitive dependencies 
+		of Client class.
+	end note
+}
+
+Client -[thickness=3]->SimpleFactory 
+Client -->ShapedGraph 
+
+ShapedGraph <|.. TriangleShapedGraph
+ShapedGraph <|.. SquareShapedGraph
+ShapedGraph <|.. CircleShapedGraph
+
+SimpleFactory -[thickness=3]->TriangleShapedGraph
+SimpleFactory -[thickness=3]->SquareShapedGraph
+SimpleFactory -[thickness=3]->CircleShapedGraph
+
+@enduml

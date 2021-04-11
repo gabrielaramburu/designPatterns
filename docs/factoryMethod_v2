@@ -23,6 +23,10 @@ note top of Reporter
 end note
 
 p1-[thickness=3]->p2
+note right on link
+	Transitive dependencies 
+	of Client package.
+end note
 package "Factories methods Impls"  as p1 #DDDDDD{
 	
 	class FinancialReporter [[java:factorymethod.reporters.FinancialReporter]] {
@@ -49,7 +53,9 @@ package "Client" as p3  {
 		of factories method class
 	end note
 }
-p3-->p1
+p3-[thickness=3]->p1
+
+	
 	
 package "Concrete reports" as p2 #DDDDDD {
 
@@ -99,11 +105,5 @@ package "Concrete reports" as p2 #DDDDDD {
 		+void createFooter()
 		+void generate()
 	}
-
-	
-	
-	
-	
-
 }
 @enduml
