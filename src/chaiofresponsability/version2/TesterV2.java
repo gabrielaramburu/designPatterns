@@ -9,6 +9,11 @@ public class TesterV2 {
 		taskA.setSuccessor(taskB);
 		System.out.println(taskA.executeChain("This is a test"));
 
+		ChainExecutorV2<Integer> taskC = new TaskC();
+		ChainExecutorV2<Integer> taskD = new TaskD();
+		
+		taskC.setSuccessor(taskD);
+		System.out.println(taskC.executeChain(3));
 	}
 
 }
