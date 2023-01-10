@@ -1,16 +1,16 @@
 package chaiofresponsability;
 
 public abstract class ChainExecutor {
-	private ChainExecutor succesor;
+	private ChainExecutor successor;
 	
-	public ChainExecutor(ChainExecutor succesor) {
-		this.succesor = succesor;
+	public void setSuccessor(ChainExecutor successor) {
+		this.successor = successor; 
 	}
 	
 	public String execute(String s) {
 		String result = this.executeConcreteTask(s);
-		if (succesor != null) {
-			return succesor.execute(result);
+		if (successor != null) {
+			return successor.execute(result);
 		} else return result;
 	}
 	

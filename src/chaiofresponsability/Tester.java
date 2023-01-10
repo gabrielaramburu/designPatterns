@@ -3,10 +3,14 @@ package chaiofresponsability;
 public class Tester {
 
 	public static void main(String[] args) {
-		TaskB tb = new TaskB(null);
-		TaskA ta = new TaskA(tb);
+		TaskB tb = new TaskB();
+		TaskA ta = new TaskA();
 		
-		System.out.println(ta.execute("This is an example"));
+		tb.setSuccessor(ta);
+		System.out.println(tb.execute("This is an example"));
+		
+//		ta.setSuccessor(tb);
+//		System.out.println(ta.execute("This is an example"));
 	}
 
 }
