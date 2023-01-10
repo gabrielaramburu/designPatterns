@@ -1,4 +1,4 @@
-package chaiofresponsability;
+package chaiofresponsability.version1;
 
 public class Tester {
 

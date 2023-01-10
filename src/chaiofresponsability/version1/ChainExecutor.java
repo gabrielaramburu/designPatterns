@@ -1,4 +1,4 @@
-package chaiofresponsability;
+package chaiofresponsability.version1;
 
 public abstract class ChainExecutor {
 	private ChainExecutor successor;

@@ -1,6 +1,6 @@
-package chaiofresponsability;
+package chaiofresponsability.version1;
 
-public class TaskA extends ChainExecutor{
+ class TaskA extends ChainExecutor{
 
 	@Override
 	public String executeConcreteTask(String s) {
