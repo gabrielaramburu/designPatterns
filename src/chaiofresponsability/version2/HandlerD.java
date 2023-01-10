@@ -1,6 +1,6 @@
 package chaiofresponsability.version2;
 
-public class TaskD extends ChainExecutorV2<Integer>{
+public class HandlerD extends ChainExecutorV2<Integer>{
 
 	@Override
 	public Integer executeConcreteTask(Integer inputValue) {
